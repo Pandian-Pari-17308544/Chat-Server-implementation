@@ -72,7 +72,7 @@ def handle_single_connection(socket, address):
 inbound_connections = Queue.Queue(maxsize=100)
 rooms = collections.OrderedDict()
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('0.0.0.0', 4017))
+sock.bind(('0.0.0.0', int(sys.argv(1)))
 sock.listen(5)
 
 while True:
